@@ -1,2 +1,21 @@
-package com.hrkhty.account.entity;public class Customer {
+package com.hrkhty.account.entity;
+
+import jakarta.persistence.*;
+import lombok.*;
+
+@Entity
+@Getter @Setter @ToString @NoArgsConstructor @AllArgsConstructor
+public class Customer {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
+    @Column(name="customer_id")
+    private Long customerId;
+
+    private String name;
+
+    private String email;
+
+    @Column(name="mobile_number")
+    private String mobileNumber;
 }
