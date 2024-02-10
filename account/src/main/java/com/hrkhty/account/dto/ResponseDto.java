@@ -1,2 +1,12 @@
-package com.hrkhty.account.dto;public class ResponseDto {
+package com.hrkhty.account.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+@Data @AllArgsConstructor
+public class ResponseDto {
+
+    private String statusCode;
+
+    private String statusMsg;
 }

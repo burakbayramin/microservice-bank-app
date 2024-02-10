@@ -1,2 +1,13 @@
-package com.hrkhty.account.dto;public class ErrorResponseDto {
+package com.hrkhty.account.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+@Data @AllArgsConstructor
+public class ErrorResponseDto {
+
+    private String apiPath;
+    private String errorCode;
+    private String errorMessage;
+    private String errorTime;
 }
