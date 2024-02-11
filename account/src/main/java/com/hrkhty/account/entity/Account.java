@@ -9,7 +9,6 @@ import lombok.*;
 @Getter @Setter @ToString @AllArgsConstructor @NoArgsConstructor
 public class Account {
 
-
     @Id
     @Column(name="account_number")
     private Long accountNumber;
