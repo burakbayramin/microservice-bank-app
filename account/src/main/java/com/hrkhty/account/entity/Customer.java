@@ -1,11 +1,12 @@
 package com.hrkhty.account.entity;
 
+import com.hrkhty.account.entity.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
-@Getter @Setter @ToString @NoArgsConstructor @AllArgsConstructor
-public class Customer {
+@Getter @Setter @ToString @AllArgsConstructor @NoArgsConstructor
+public class Customer extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,4 +19,5 @@ public class Customer {
 
     @Column(name="mobile_number")
     private String mobileNumber;
+
 }

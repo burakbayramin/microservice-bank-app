@@ -4,7 +4,7 @@ import com.hrkhty.account.constants.AccountConstants;
 import com.hrkhty.account.dto.CustomerDto;
 import com.hrkhty.account.dto.ErrorResponseDto;
 import com.hrkhty.account.dto.ResponseDto;
-import com.hrkhty.account.service.AccountService;
+import com.hrkhty.account.service.AccountsService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -21,16 +21,16 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 @Tag(
-        name = "REST API for Accounts in Bank",
-        description = "REST API in Bank to CREATE, UPDATE, FETCH AND DELETE account details"
+        name = "CRUD REST APIs for Accounts in Bank",
+        description = "CRUD REST APIs in Bank to CREATE, UPDATE, FETCH AND DELETE account details"
 )
 @RestController
-@RequestMapping(path = "/api/accounts", produces = {MediaType.APPLICATION_JSON_VALUE})
+@RequestMapping(path="/api/accounts", produces = {MediaType.APPLICATION_JSON_VALUE})
 @AllArgsConstructor
 @Validated
 public class AccountController {
 
-    private final AccountService accountService;
+    private AccountsService accountsService;
 
     @Operation(
             summary = "Create Account REST API",
@@ -52,7 +52,7 @@ public class AccountController {
     )
     @PostMapping
     public ResponseEntity<ResponseDto> createAccount(@Valid @RequestBody CustomerDto customerDto) {
-        accountService.createAccount(customerDto);
+        accountsService.createAccount(customerDto);
         return ResponseEntity
                 .status(HttpStatus.CREATED)
                 .body(new ResponseDto(AccountConstants.STATUS_201, AccountConstants.MESSAGE_201));
@@ -77,8 +77,10 @@ public class AccountController {
     }
     )
     @GetMapping
-    public ResponseEntity<CustomerDto> getAccountDetails(@RequestParam @Pattern(regexp="(^$|[0-9]{10})",message = "Mobile number must be 10 digits") String mobileNumber) {
-        CustomerDto customerDto = accountService.getAccountByMobileNumber(mobileNumber);
+    public ResponseEntity<CustomerDto> fetchAccountDetails(@RequestParam
+                                                               @Pattern(regexp="(^$|[0-9]{10})",message = "Mobile number must be 10 digits")
+                                                               String mobileNumber) {
+        CustomerDto customerDto = accountsService.fetchAccount(mobileNumber);
         return ResponseEntity.status(HttpStatus.OK).body(customerDto);
     }
 
@@ -106,7 +108,7 @@ public class AccountController {
     )
     @PutMapping
     public ResponseEntity<ResponseDto> updateAccountDetails(@Valid @RequestBody CustomerDto customerDto) {
-        boolean isUpdated = accountService.updateAccount(customerDto);
+        boolean isUpdated = accountsService.updateAccount(customerDto);
         if(isUpdated) {
             return ResponseEntity
                     .status(HttpStatus.OK)
@@ -141,8 +143,10 @@ public class AccountController {
     }
     )
     @DeleteMapping
-    public ResponseEntity<ResponseDto> deleteAccountDetails(@RequestParam @Pattern(regexp="(^$|[0-9]{10})",message = "Mobile number must be 10 digits") String mobileNumber) {
-        boolean isDeleted = accountService.deleteAccount(mobileNumber);
+    public ResponseEntity<ResponseDto> deleteAccountDetails(@RequestParam
+                                                                @Pattern(regexp="(^$|[0-9]{10})",message = "Mobile number must be 10 digits")
+                                                                String mobileNumber) {
+        boolean isDeleted = accountsService.deleteAccount(mobileNumber);
         if(isDeleted) {
             return ResponseEntity
                     .status(HttpStatus.OK)
@@ -153,4 +157,6 @@ public class AccountController {
                     .body(new ResponseDto(AccountConstants.STATUS_417, AccountConstants.MESSAGE_417_DELETE));
         }
     }
+
+
 }

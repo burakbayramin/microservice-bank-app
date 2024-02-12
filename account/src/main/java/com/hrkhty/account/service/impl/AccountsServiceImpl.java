@@ -1,5 +1,7 @@
 package com.hrkhty.account.service.impl;
 
+import com.hrkhty.account.repository.AccountRepository;
+import com.hrkhty.account.repository.CustomerRepository;
 import com.hrkhty.account.constants.AccountConstants;
 import com.hrkhty.account.dto.AccountDto;
 import com.hrkhty.account.dto.CustomerDto;
@@ -9,22 +11,19 @@ import com.hrkhty.account.exception.CustomerAlreadyExistsException;
 import com.hrkhty.account.exception.ResourceNotFoundException;
 import com.hrkhty.account.mapper.AccountMapper;
 import com.hrkhty.account.mapper.CustomerMapper;
-import com.hrkhty.account.repository.AccountRepository;
-import com.hrkhty.account.repository.CustomerRepository;
-import com.hrkhty.account.service.AccountService;
+import com.hrkhty.account.service.AccountsService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
 import java.util.Optional;
 import java.util.Random;
 
 @Service
 @AllArgsConstructor
-public class AccountServiceImpl implements AccountService {
+public class AccountsServiceImpl  implements AccountsService {
 
-    private final AccountRepository accountRepository;
-    private final CustomerRepository customerRepository;
+    private AccountRepository accountRepository;
+    private CustomerRepository customerRepository;
 
     private Account createNewAccount(Customer customer) {
         Account newAccount = new Account();
@@ -50,7 +49,7 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
-    public CustomerDto getAccountByMobileNumber(String mobileNumber) {
+    public CustomerDto fetchAccount(String mobileNumber) {
         Customer customer = customerRepository.findByMobileNumber(mobileNumber).orElseThrow(
                 () -> new ResourceNotFoundException("Customer", "mobileNumber", mobileNumber)
         );
@@ -58,7 +57,7 @@ public class AccountServiceImpl implements AccountService {
                 () -> new ResourceNotFoundException("Account", "customerId", customer.getCustomerId().toString())
         );
         CustomerDto customerDto = CustomerMapper.mapToCustomerDto(customer, new CustomerDto());
-        customerDto.setAccountDto(AccountMapper.mapToAccountsDto(account, new AccountDto()));
+        customerDto.setAccountDto(AccountMapper.mapToAccountDto(account, new AccountDto()));
         return customerDto;
     }
 
@@ -70,7 +69,7 @@ public class AccountServiceImpl implements AccountService {
             Account account = accountRepository.findById(accountDto.getAccountNumber()).orElseThrow(
                     () -> new ResourceNotFoundException("Account", "AccountNumber", accountDto.getAccountNumber().toString())
             );
-            AccountMapper.mapToAccounts(accountDto, account);
+            AccountMapper.mapToAccount(accountDto, account);
             account = accountRepository.save(account);
 
             Long customerId = account.getCustomerId();
@@ -93,4 +92,6 @@ public class AccountServiceImpl implements AccountService {
         customerRepository.deleteById(customer.getCustomerId());
         return true;
     }
+
+
 }

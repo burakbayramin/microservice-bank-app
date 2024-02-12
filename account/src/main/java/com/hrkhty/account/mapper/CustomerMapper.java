@@ -4,6 +4,7 @@ import com.hrkhty.account.dto.CustomerDto;
 import com.hrkhty.account.entity.Customer;
 
 public class CustomerMapper {
+
     public static CustomerDto mapToCustomerDto(Customer customer, CustomerDto customerDto) {
         customerDto.setName(customer.getName());
         customerDto.setEmail(customer.getEmail());
@@ -17,4 +18,5 @@ public class CustomerMapper {
         customer.setMobileNumber(customerDto.getMobileNumber());
         return customer;
     }
+
 }
