@@ -1,6 +1,7 @@
 package com.hrkhty.account.controller;
 
 import com.hrkhty.account.constants.AccountConstants;
+import com.hrkhty.account.dto.AccountContactInfoDto;
 import com.hrkhty.account.dto.CustomerDto;
 import com.hrkhty.account.dto.ErrorResponseDto;
 import com.hrkhty.account.dto.ResponseDto;
@@ -13,7 +14,9 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Pattern;
-import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -26,11 +29,23 @@ import org.springframework.web.bind.annotation.*;
 )
 @RestController
 @RequestMapping(path="/api/accounts", produces = {MediaType.APPLICATION_JSON_VALUE})
-@AllArgsConstructor
 @Validated
 public class AccountController {
 
-    private AccountsService accountsService;
+    private final AccountsService accountsService;
+    private final AccountContactInfoDto accountContactInfoDto;
+
+    public AccountController(AccountsService accountsService, AccountContactInfoDto accountContactInfoDto) {
+        this.accountsService = accountsService;
+        this.accountContactInfoDto = accountContactInfoDto;
+    }
+
+    @Value("${build.version}")
+    private String buildVersion;
+
+    @Autowired
+    public Environment environment;
+
 
     @Operation(
             summary = "Create Account REST API",
@@ -158,5 +173,72 @@ public class AccountController {
         }
     }
 
+    @Operation(
+            summary = "Get Version Information REST API",
+            description = "REST API to get the version of the application build"
+    )
+    @ApiResponses({
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "HTTP Status OK"
+            ),
+            @ApiResponse(
+                    responseCode = "500",
+                    description = "HTTP Status Internal Server Error",
+                    content = @Content(
+                            schema = @Schema(implementation = ErrorResponseDto.class)
+                    )
+            )
+    }
+    )
+    @GetMapping("/version")
+    public ResponseEntity<String> getBuildVersion() {
+        return ResponseEntity.status(HttpStatus.OK).body(buildVersion);
+    }
 
+    @Operation(
+            summary = "Get Environment Version Information REST API",
+            description = "REST API to get the environment version of the application build"
+    )
+    @ApiResponses({
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "HTTP Status OK"
+            ),
+            @ApiResponse(
+                    responseCode = "500",
+                    description = "HTTP Status Internal Server Error",
+                    content = @Content(
+                            schema = @Schema(implementation = ErrorResponseDto.class)
+                    )
+            )
+    }
+    )
+    @GetMapping("/env-version")
+    public ResponseEntity<String> getEnvVersion() {
+        return ResponseEntity.status(HttpStatus.OK).body(environment.getProperty("JAVA_HOME"));
+    }
+
+    @Operation(
+            summary = "Get Contact Information",
+            description = "REST API to get the contact information of the application build"
+    )
+    @ApiResponses({
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "HTTP Status OK"
+            ),
+            @ApiResponse(
+                    responseCode = "500",
+                    description = "HTTP Status Internal Server Error",
+                    content = @Content(
+                            schema = @Schema(implementation = ErrorResponseDto.class)
+                    )
+            )
+    }
+    )
+    @GetMapping("/contact")
+    public ResponseEntity<AccountContactInfoDto> getContact() {
+        return ResponseEntity.status(HttpStatus.OK).body(accountContactInfoDto);
+    }
 }
