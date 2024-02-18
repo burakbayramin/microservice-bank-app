@@ -1,0 +1,38 @@
+services:
+  account:
+    image: "horakhty/account:v1"
+    container_name: "account-ms"
+    ports:
+      - "8080:8080"
+    deploy:
+      resources:
+        limits:
+          memory: 512m
+    networks:
+      - horakhty
+  loan:
+    image: "horakhty/loan:v1"
+    container_name: "loan-ms"
+    ports:
+      - "8090:8090"
+    deploy:
+      resources:
+        limits:
+          memory: 512m
+    networks:
+      - horakhty
+  card:
+    image: "horakhty/card:v1"
+    container_name: "card-ms"
+    ports:
+      - "9000:9000"
+    deploy:
+      resources:
+        limits:
+          memory: 512m
+    networks:
+      - horakhty
+
+networks:
+  horakhty:
+    driver: bridge
