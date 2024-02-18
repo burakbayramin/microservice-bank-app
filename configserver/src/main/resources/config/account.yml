@@ -1,0 +1,11 @@
+build:
+  version: "1.2"
+
+account:
+  message: "Welcome Bank Account Microservice"
+  contactDetails:
+    name: "Burak Bayramin (Software Engineer)"
+    email: "burakbyrmn@gmail.com"
+  onCallSupport:
+    - (555) 555-4444
+    - (555) 555-3333

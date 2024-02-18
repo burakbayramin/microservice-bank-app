@@ -1,0 +1,11 @@
+build:
+  version: "1.0"
+
+account:
+  message: "Welcome Bank Account Prod Microservice"
+  contactDetails:
+    name: "Burak  (Software Engineer)"
+    email: "burak@gmail.com"
+  onCallSupport:
+    - (555) 555-0000
+    - (555) 555-9999

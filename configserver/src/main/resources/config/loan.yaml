@@ -1,0 +1,11 @@
+build:
+  version: "1.2"
+
+loans:
+  message: "Welcome to Bank loans related local APIs "
+  contactDetails:
+    name: "xyz - Developer"
+    email: "xyz@eazybank.com"
+  onCallSupport:
+    - (452) 456-2176
+    - (546) 764-8934
