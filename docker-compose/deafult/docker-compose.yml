@@ -12,11 +12,11 @@ services:
       retries: 3
       start_period: 30s
     extends:
-      file: common-services.yml
+      file: common-config.yml
       service: network-deploy-service
 
   configserver:
-    image: "horakhty/configserver:v1.2"
+    image: "horakhty/configserver:v1.1"
     container_name: "configserver"
     ports:
       - "8071:8071"
@@ -38,7 +38,7 @@ services:
       service: microservice-base-config
 
   account:
-    image: "horakhty/account:v1.2"
+    image: "horakhty/account:v1.1"
     container_name: "account-ms"
     ports:
       - "8080:8080"
@@ -46,10 +46,10 @@ services:
       SPRING_APPLICATION_NAME: "account"
     extends:
       file: common-config.yml
-      service: microservice-base-config
+      service: microservice-configserver-config
 
   loan:
-    image: "horakhty/loan:v1.2"
+    image: "horakhty/loan:v1.1"
     container_name: "loan-ms"
     ports:
       - "8090:8090"
@@ -57,10 +57,10 @@ services:
       SPRING_APPLICATION_NAME: "loan"
     extends:
       file: common-config.yml
-      service: microservice-base-config
+      service: microservice-configserver-config
 
   card:
-    image: "horakhty/card:v1.2"
+    image: "horakhty/card:v1.1"
     container_name: "card-ms"
     ports:
       - "9000:9000"
@@ -68,7 +68,7 @@ services:
       SPRING_APPLICATION_NAME: "card"
     extends:
       file: common-config.yml
-      service: microservice-base-config
+      service: microservice-configserver-config
 
 networks:
   horakhty:
