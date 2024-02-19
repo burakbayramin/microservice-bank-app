@@ -5,10 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="70a1f350-69b1-4a35-a9db-4afa40334f26" name="Changes" comment="some changes and config server added">
-      <change afterPath="$PROJECT_DIR$/configserver/src/main/resources/config/account.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/configserver/src/main/resources/config/account_prod.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/configserver/src/main/resources/config/account_qa.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose/deafult/common-config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose/deafult/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/account/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/src/main/java/com/hrkhty/account/dto/AccountContactInfoDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/account/src/main/java/com/hrkhty/account/dto/AccountContactInfoDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/account/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/src/main/resources/application_prod.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/src/main/resources/application_qa.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/card/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/card/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/card/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/card/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configserver/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/configserver/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configserver/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configserver/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loan/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/loan/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/loan/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/loan/src/main/resources/application.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -19,21 +28,61 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;burakbayramin&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="a820ce2f-7ba7-4823-9836-91e2de681547" />
+        <option name="url" value="https://github.com/burakbayramin/microservice-bank-app.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/configserver/src/main/java/com/hrkhty/configserver/ConfigserverApplication.java" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="KubernetesApiProvider">{
+  &quot;contexts&quot;: [
+    {
+      &quot;name&quot;: &quot;devcluster&quot;,
+      &quot;originalNamespace&quot;: &quot;default&quot;
+    }
+  ],
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="KubernetesSettings">
+    <option name="contextName" value="devcluster" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2cY0pgbC0KMYp3tBu33wdm3wv4r" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.AccountApplication.executor": "Run",
+    "Spring Boot.CardApplication.executor": "Run",
+    "Spring Boot.ConfigserverApplication.executor": "Run",
+    "Spring Boot.LoanApplication.executor": "Run",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/master/Desktop/microservice-bank-app/configserver/src/main/resources/config",
@@ -43,12 +92,16 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "run.configurations.included.in.services": "true",
+    "settings.editor.selected.configurable": "spring",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\master\Desktop\microservice-bank-app\configserver\src\main\resources\config" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\master\Desktop\microservice-bank-app\docker-compose\deafult" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -108,7 +161,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1708273389220</updated>
-      <workItem from="1708273390163" duration="2498000" />
+      <workItem from="1708273390163" duration="5524000" />
+      <workItem from="1708332636203" duration="8141000" />
     </task>
     <task id="LOCAL-00001" summary="some changes and config server added">
       <option name="closed" value="true" />
@@ -127,5 +181,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="some changes and config server added" />
     <option name="LAST_COMMIT_MESSAGE" value="some changes and config server added" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

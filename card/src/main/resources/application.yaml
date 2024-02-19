@@ -1,6 +1,10 @@
 server:
   port: 9000
 spring:
+  application:
+    name: "card"
+  config:
+    import: "optional:configserver:http://localhost:8071"
   datasource:
     url: jdbc:h2:mem:testdb
     driverClassName: org.h2.Driver
@@ -14,15 +18,14 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+  rabbitmq:
+    host: "localhost"
+    port: 5672
+    username: "guest"
+    password: "guest"
 
-build:
-  version: "1.2"
-
-cards:
-  message: "Welcome to Bank cards related local APIs "
-  contactDetails:
-    name: "ABC - Developer"
-    email: "abc@eazybank.com"
-  onCallSupport:
-    - (412) 419-3491
-    - (915) 382-1932
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

@@ -1,0 +1,75 @@
+services:
+  rabbit:
+    image: "rabbitmq:3.12-management"
+    hostname: "rabbitmq"
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    healthcheck:
+      test: rabbitmq-diagnostics check_port_connectivity
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    extends:
+      file: common-services.yml
+      service: network-deploy-service
+
+  configserver:
+    image: "horakhty/configserver:v1.2"
+    container_name: "configserver"
+    ports:
+      - "8071:8071"
+    depends_on:
+      rabbit:
+        condition: service_healthy
+    healthcheck:
+      test: "curl --fail --silent localhost:8071/actuator/health | grep UP || exit 1"
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    deploy:
+      resources:
+        limits:
+          memory: 512m
+    extends:
+      file: common-config.yml
+      service: microservice-base-config
+
+  account:
+    image: "horakhty/account:v1.2"
+    container_name: "account-ms"
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_APPLICATION_NAME: "account"
+    extends:
+      file: common-config.yml
+      service: microservice-base-config
+
+  loan:
+    image: "horakhty/loan:v1.2"
+    container_name: "loan-ms"
+    ports:
+      - "8090:8090"
+    environment:
+      SPRING_APPLICATION_NAME: "loan"
+    extends:
+      file: common-config.yml
+      service: microservice-base-config
+
+  card:
+    image: "horakhty/card:v1.2"
+    container_name: "card-ms"
+    ports:
+      - "9000:9000"
+    environment:
+      SPRING_APPLICATION_NAME: "card"
+    extends:
+      file: common-config.yml
+      service: microservice-base-config
+
+networks:
+  horakhty:
+    driver: bridge

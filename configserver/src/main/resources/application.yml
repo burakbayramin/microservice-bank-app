@@ -1,13 +1,46 @@
+server:
+  port: 8071
+
 spring:
   application:
-    name: "config-server"
+    name: "configserver"
   profiles:
     active: native
+#    active: git
   cloud:
     config:
       server:
         native:
           searchLocations: "classpath:/config"
+#        git:
+#          uri: https://github.com/burakbayramin/microservice-bank-app/configserver/src/main/resources/config.git
+#          default-label: main
+#          timeout: 5
+#          clone-on-start: true
+#          force-pull: true
+  rabbitmq:
+    host: "localhost"
+    port: 5672
+    username: "guest"
+    password: "guest"
 
-server:
-  port: 8071
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  health:
+    readiness-state:
+      enabled: true
+    liveness-state:
+      enabled: true
+  endpoint:
+    health:
+      probes:
+        enabled: true
+
+encrypt:
+  key: "10e54776d30cffedf7789879844a87b046c5273273812b6c96da540a26776dcd"
+
+
+

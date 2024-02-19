@@ -1,6 +1,10 @@
 server:
   port: 8090
 spring:
+  application:
+    name: "loan"
+  config:
+    import: "optional:configserver:http://localhost:8071"
   datasource:
     url: jdbc:h2:mem:testdb
     driverClassName: org.h2.Driver
@@ -14,15 +18,14 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+  rabbitmq:
+    host: "localhost"
+    port: 5672
+    username: "guest"
+    password: "guest"
 
-build:
-  version: "1.2"
-
-loans:
-  message: "Welcome to Bank loans related local APIs "
-  contactDetails:
-    name: "xyz - Developer"
-    email: "xyz@eazybank.com"
-  onCallSupport:
-    - (452) 456-2176
-    - (546) 764-8934
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

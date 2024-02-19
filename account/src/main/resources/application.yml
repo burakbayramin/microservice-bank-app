@@ -1,6 +1,11 @@
 server:
   port: 8080
+
 spring:
+  application:
+    name: "account"
+  config:
+    import: "optional:configserver:http://localhost:8071"
   datasource:
     url: jdbc:h2:mem:testdb
     driverClassName: org.h2.Driver
@@ -14,22 +19,14 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
-  config:
-    import:
-      - "application_qa.yml"
-      - "application_prod.yml"
-#  profiles:
-#    active:
-#      "qa"
+  rabbitmq:
+    host: "localhost"
+    port: 5672
+    username: "guest"
+    password: "guest"
 
-build:
-  version: "1.2"
-
-account:
-  message: "Welcome Bank Account Microservice"
-  contactDetails:
-    name: "Burak Bayramin (Software Engineer)"
-    email: "burakbyrmn@gmail.com"
-  onCallSupport:
-    - (555) 555-4444
-    - (555) 555-3333
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
