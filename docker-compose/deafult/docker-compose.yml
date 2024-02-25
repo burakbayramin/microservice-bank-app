@@ -1,28 +1,39 @@
 services:
-  rabbit:
-    image: "rabbitmq:3.12-management"
-    hostname: "rabbitmq"
+  accountdb:
+    container_name: accountdb
     ports:
-      - "5672:5672"
-      - "15672:15672"
-    healthcheck:
-      test: rabbitmq-diagnostics check_port_connectivity
-      interval: 30s
-      timeout: 10s
-      retries: 3
-      start_period: 30s
+      - 3306:3306
+    environment:
+      MYSQL_DATABASE: accountdb
     extends:
       file: common-config.yml
-      service: network-deploy-service
+      service: microservice-db-config
+
+  loandb:
+    container_name: loandb
+    ports:
+      - 3308:3306
+    environment:
+      MYSQL_DATABASE: loandb
+    extends:
+      file: common-config.yml
+      service: microservice-db-config
+
+  carddb:
+    container_name: carddb
+    ports:
+      - 3307:3306
+    environment:
+      MYSQL_DATABASE: carddb
+    extends:
+      file: common-config.yml
+      service: microservice-db-config
 
   configserver:
-    image: "horakhty/configserver:v1.1"
+    image: "horakhty/configserver:v1.2"
     container_name: "configserver"
     ports:
       - "8071:8071"
-    depends_on:
-      rabbit:
-        condition: service_healthy
     healthcheck:
       test: "curl --fail --silent localhost:8071/actuator/health | grep UP || exit 1"
       interval: 30s
@@ -38,34 +49,46 @@ services:
       service: microservice-base-config
 
   account:
-    image: "horakhty/account:v1.1"
+    image: "horakhty/account:v1.2"
     container_name: "account-ms"
     ports:
       - "8080:8080"
     environment:
       SPRING_APPLICATION_NAME: "account"
+      SPRING_DATASOURCE_URL: "jdbc:mysql://accountdb:3306/accountdb"
+    depends_on:
+      accountdb:
+        condition: service_healthy
     extends:
       file: common-config.yml
       service: microservice-configserver-config
 
   loan:
-    image: "horakhty/loan:v1.1"
+    image: "horakhty/loan:v1.2"
     container_name: "loan-ms"
     ports:
       - "8090:8090"
     environment:
       SPRING_APPLICATION_NAME: "loan"
+      SPRING_DATASOURCE_URL: "jdbc:mysql://loandb:3306/loandb"
+    depends_on:
+      loandb:
+        condition: service_healthy
     extends:
       file: common-config.yml
       service: microservice-configserver-config
 
   card:
-    image: "horakhty/card:v1.1"
+    image: "horakhty/card:v1.2"
     container_name: "card-ms"
     ports:
       - "9000:9000"
     environment:
       SPRING_APPLICATION_NAME: "card"
+      SPRING_DATASOURCE_URL: "jdbc:mysql://carddb:3306/carddb"
+    depends_on:
+      carddb:
+        condition: service_healthy
     extends:
       file: common-config.yml
       service: microservice-configserver-config
@@ -73,3 +96,4 @@ services:
 networks:
   horakhty:
     driver: bridge
+
