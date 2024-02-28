@@ -4,21 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="70a1f350-69b1-4a35-a9db-4afa40334f26" name="Changes" comment="docker compose file finished and application.yml finished">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+    <list default="true" id="aed1cdf5-e1cb-4200-9cbb-fd516f284335" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/account/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/account/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/card/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/card/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/card/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/card/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configserver/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/configserver/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configserver/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configserver/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose/deafult/common-config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose/deafult/common-config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose/deafult/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose/deafult/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loan/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/loan/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loan/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/loan/src/main/resources/application.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,101 +20,37 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;burakbayramin&quot;
-  }
-}</component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="selectedUrlAndAccountId">
-      <UrlAndAccount>
-        <option name="accountId" value="a820ce2f-7ba7-4823-9836-91e2de681547" />
-        <option name="url" value="https://github.com/burakbayramin/microservice-bank-app.git" />
-      </UrlAndAccount>
-    </option>
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/configserver/src/main/java/com/hrkhty/configserver/ConfigserverApplication.java" root0="FORCE_HIGHLIGHTING" />
-  </component>
   <component name="JpbToolWindowState">
     <option name="isToolWindowVisible" value="false" />
-  </component>
-  <component name="KubernetesApiProvider">{
-  &quot;contexts&quot;: [
-    {
-      &quot;name&quot;: &quot;devcluster&quot;,
-      &quot;originalNamespace&quot;: &quot;default&quot;
-    }
-  ],
-  &quot;isMigrated&quot;: true
-}</component>
-  <component name="KubernetesSettings">
-    <option name="contextName" value="devcluster" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 4
+  &quot;associatedIndex&quot;: 5
 }</component>
-  <component name="ProjectId" id="2cY0pgbC0KMYp3tBu33wdm3wv4r" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="2cznjP9CI7Ef6r9H2rifHt968Ir" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Docker.deafult.account: Compose Deployment.executor": "Run",
-    "Docker.deafult.configserver: Compose Deployment.executor": "Run",
-    "Docker.deafult.rabbit: Compose Deployment.executor": "Run",
-    "Docker.deafult: Compose Deployment.executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.AccountApplication.executor": "Run",
-    "Spring Boot.CardApplication.executor": "Run",
-    "Spring Boot.ConfigserverApplication.executor": "Run",
-    "Spring Boot.LoanApplication.executor": "Run",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/master/Desktop/microservice-bank-app/configserver/src/main/resources/config",
+    "last_opened_file_path": "C:/Users/master/Desktop/microservice-bank-app",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
     "run.configurations.included.in.services": "true",
-    "settings.editor.selected.configurable": "spring",
+    "settings.editor.selected.configurable": "reference.settings.ide.settings.notifications",
     "vue.rearranger.settings.migration": "true"
-  },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
-    ],
-    "com.intellij.ide.scratch.LRUPopupBuilder$1/": [
-      "MySQL"
-    ]
   }
 }]]></component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\master\Desktop\microservice-bank-app\configserver\src\main\resources\config" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\master\Desktop\microservice-bank-app\docker-compose\deafult" />
-    </key>
-  </component>
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
@@ -132,7 +60,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Docker.deafult: Compose Deployment">
+  <component name="RunManager" selected="Spring Boot.CardApplication">
     <configuration name="AccountApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="account" />
@@ -156,6 +84,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="EurekaserverApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="eurekaserver" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.horakhty.eurekaserver.EurekaserverApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="LoanApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="loan" />
@@ -164,117 +99,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
-      <deployment type="docker-compose.yml">
-        <settings />
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <configuration name="deafult: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="envFilePath" value="" />
-          <option name="sourceFilePath" value="docker-compose/deafult/docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <configuration name="deafult.account: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="services">
-            <list>
-              <option value="account" />
-            </list>
-          </option>
-          <option name="sourceFilePath" value="docker-compose/deafult/docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <configuration name="deafult.configserver: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="services">
-            <list>
-              <option value="configserver" />
-            </list>
-          </option>
-          <option name="sourceFilePath" value="docker-compose/deafult/docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <configuration name="deafult.rabbit: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="services">
-            <list>
-              <option value="rabbit" />
-            </list>
-          </option>
-          <option name="sourceFilePath" value="docker-compose/deafult/docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Docker.deafult: Compose Deployment" />
-        <item itemvalue="Docker.deafult.account: Compose Deployment" />
-        <item itemvalue="Docker.deafult.configserver: Compose Deployment" />
-        <item itemvalue="Docker.deafult.rabbit: Compose Deployment" />
-      </list>
-    </recent_temporary>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="jdk-21.0.1-openjdk-21.0.1-4caba194b151-23eed401" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="70a1f350-69b1-4a35-a9db-4afa40334f26" name="Changes" comment="" />
-      <created>1708273389220</created>
+      <changelist id="aed1cdf5-e1cb-4200-9cbb-fd516f284335" name="Changes" comment="" />
+      <created>1709123409396</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1708273389220</updated>
-      <workItem from="1708273390163" duration="5524000" />
-      <workItem from="1708332636203" duration="10370000" />
-      <workItem from="1708434832107" duration="1806000" />
-      <workItem from="1708504140961" duration="6618000" />
-      <workItem from="1708798479652" duration="2548000" />
-      <workItem from="1708852727236" duration="3518000" />
+      <updated>1709123409396</updated>
+      <workItem from="1709123410412" duration="168000" />
+      <workItem from="1709123587663" duration="304000" />
     </task>
-    <task id="LOCAL-00001" summary="some changes and config server added">
-      <option name="closed" value="true" />
-      <created>1708273513002</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1708273513002</updated>
-    </task>
-    <task id="LOCAL-00002" summary="docker compose file finished and application.yml finished">
-      <option name="closed" value="true" />
-      <created>1708378064965</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1708378064965</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="some changes and config server added" />
-    <MESSAGE value="docker compose file finished and application.yml finished" />
-    <option name="LAST_COMMIT_MESSAGE" value="docker compose file finished and application.yml finished" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
