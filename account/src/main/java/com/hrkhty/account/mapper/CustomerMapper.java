@@ -1,5 +1,6 @@
 package com.hrkhty.account.mapper;
 
+import com.hrkhty.account.dto.CustomerDetailsDto;
 import com.hrkhty.account.dto.CustomerDto;
 import com.hrkhty.account.entity.Customer;
 
@@ -19,4 +20,10 @@ public class CustomerMapper {
         return customer;
     }
 
+    public static CustomerDetailsDto mapToCustomerDetailsDto(Customer customer, CustomerDetailsDto customerDetailsDto) {
+        customerDetailsDto.setName(customer.getName());
+        customerDetailsDto.setEmail(customer.getEmail());
+        customerDetailsDto.setMobileNumber(customer.getMobileNumber());
+        return customerDetailsDto;
+    }
 }
