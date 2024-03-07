@@ -1,37 +1,37 @@
 services:
-  accountdb:
-    container_name: accountdb
-    ports:
-      - 3306:3306
-    environment:
-      MYSQL_DATABASE: accountdb
-    extends:
-      file: common-config.yml
-      service: microservice-db-config
-
-  loandb:
-    container_name: loandb
-    ports:
-      - 3308:3306
-    environment:
-      MYSQL_DATABASE: loandb
-    extends:
-      file: common-config.yml
-      service: microservice-db-config
-
-  carddb:
-    container_name: carddb
-    ports:
-      - 3307:3306
-    environment:
-      MYSQL_DATABASE: carddb
-    extends:
-      file: common-config.yml
-      service: microservice-db-config
+#  accountdb:
+#    container_name: accountdb
+#    ports:
+#      - 3306:3306
+#    environment:
+#      MYSQL_DATABASE: accountdb
+#    extends:
+#      file: common-config.yml
+#      service: microservice-db-config
+#
+#  loandb:
+#    container_name: loandb
+#    ports:
+#      - 3308:3306
+#    environment:
+#      MYSQL_DATABASE: loandb
+#    extends:
+#      file: common-config.yml
+#      service: microservice-db-config
+#
+#  carddb:
+#    container_name: carddb
+#    ports:
+#      - 3307:3306
+#    environment:
+#      MYSQL_DATABASE: carddb
+#    extends:
+#      file: common-config.yml
+#      service: microservice-db-config
 
   configserver:
-    image: "horakhty/configserver:v1.2"
-    container_name: "configserver"
+    image: "horakhty/configserver:v1.4"
+    container_name: "configserver-ms"
     ports:
       - "8071:8071"
     healthcheck:
@@ -48,50 +48,143 @@ services:
       file: common-config.yml
       service: microservice-base-config
 
+  eurekaserver:
+    image: "horakhty/eurekaserver:v1.4"
+    container_name: "eurekaserver-ms"
+    ports:
+      - "8070:8070"
+    healthcheck:
+      test: "curl --fail --silent localhost:8070/actuator/health | grep UP || exit 1"
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    deploy:
+      resources:
+        limits:
+          memory: 512m
+    extends:
+      file: common-config.yml
+      service: microservice-base-config
+    depends_on:
+      configserver:
+        condition: service_healthy
+    environment:
+      SPRING_APPLICATION_NAME: "eurekaserver"
+
   account:
-    image: "horakhty/account:v1.2"
+    image: "horakhty/account:v1.4"
     container_name: "account-ms"
     ports:
       - "8080:8080"
+    healthcheck:
+      test: "curl --fail --silent localhost:8080/actuator/health | grep UP || exit 1"
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
     environment:
       SPRING_APPLICATION_NAME: "account"
-      SPRING_DATASOURCE_URL: "jdbc:mysql://accountdb:3306/accountdb"
-    depends_on:
-      accountdb:
-        condition: service_healthy
     extends:
       file: common-config.yml
       service: microservice-configserver-config
 
   loan:
-    image: "horakhty/loan:v1.2"
+    image: "horakhty/loan:v1.4"
     container_name: "loan-ms"
     ports:
       - "8090:8090"
+    healthcheck:
+      test: "curl --fail --silent localhost:8090/actuator/health | grep UP || exit 1"
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
     environment:
       SPRING_APPLICATION_NAME: "loan"
-      SPRING_DATASOURCE_URL: "jdbc:mysql://loandb:3306/loandb"
-    depends_on:
-      loandb:
-        condition: service_healthy
     extends:
       file: common-config.yml
       service: microservice-configserver-config
 
   card:
-    image: "horakhty/card:v1.2"
+    image: "horakhty/card:v1.4"
     container_name: "card-ms"
     ports:
       - "9000:9000"
+    healthcheck:
+      test: "curl --fail --silent localhost:9000/actuator/health | grep UP || exit 1"
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
     environment:
       SPRING_APPLICATION_NAME: "card"
-      SPRING_DATASOURCE_URL: "jdbc:mysql://carddb:3306/carddb"
-    depends_on:
-      carddb:
-        condition: service_healthy
     extends:
       file: common-config.yml
       service: microservice-configserver-config
+
+  gatewayserver:
+    image: "horakhty/gatewayserver:v1.4"
+    container_name: "gatewayserver-ms"
+    ports:
+      - "8072:8072"
+    depends_on:
+      account:
+        condition: service_healthy
+      loan:
+        condition: service_healthy
+      card:
+        condition: service_healthy
+    environment:
+      SPRING_APPLICATION_NAME: "gatewayserver"
+    extends:
+      file: common-config.yml
+      service: microservice-configserver-config
+
+#  account:
+#    image: "horakhty/account:v1.2"
+#    container_name: "account-ms"
+#    ports:
+#      - "8080:8080"
+#    environment:
+#      SPRING_APPLICATION_NAME: "account"
+#      SPRING_DATASOURCE_URL: "jdbc:mysql://accountdb:3306/accountdb"
+#    depends_on:
+#      accountdb:
+#        condition: service_healthy
+#    extends:
+#      file: common-config.yml
+#      service: microservice-configserver-config
+#
+#  loan:
+#    image: "horakhty/loan:v1.2"
+#    container_name: "loan-ms"
+#    ports:
+#      - "8090:8090"
+#    environment:
+#      SPRING_APPLICATION_NAME: "loan"
+#      SPRING_DATASOURCE_URL: "jdbc:mysql://loandb:3306/loandb"
+#    depends_on:
+#      loandb:
+#        condition: service_healthy
+#    extends:
+#      file: common-config.yml
+#      service: microservice-configserver-config
+#
+#  card:
+#    image: "horakhty/card:v1.2"
+#    container_name: "card-ms"
+#    ports:
+#      - "9000:9000"
+#    environment:
+#      SPRING_APPLICATION_NAME: "card"
+#      SPRING_DATASOURCE_URL: "jdbc:mysql://carddb:3306/carddb"
+#    depends_on:
+#      carddb:
+#        condition: service_healthy
+#    extends:
+#      file: common-config.yml
+#      service: microservice-configserver-config
 
 networks:
   horakhty:

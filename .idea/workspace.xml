@@ -1,32 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AnalysisUIOptions">
-    <option name="SCOPE_TYPE" value="4" />
-  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aed1cdf5-e1cb-4200-9cbb-fd516f284335" name="Changes" comment="eureka server added not started">
-      <change afterPath="$PROJECT_DIR$/account/src/main/java/com/hrkhty/account/controller/CustomerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/account/src/main/java/com/hrkhty/account/dto/CardDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/account/src/main/java/com/hrkhty/account/dto/CustomerDetailsDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/account/src/main/java/com/hrkhty/account/dto/LoanDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/account/src/main/java/com/hrkhty/account/service/CustomerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/account/src/main/java/com/hrkhty/account/service/client/CardFeignClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/account/src/main/java/com/hrkhty/account/service/client/LoanFeignClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/account/src/main/java/com/hrkhty/account/service/impl/CustomerServiceImpl.java" afterDir="false" />
+    <list default="true" id="84703d0d-7084-45bb-b1dc-3f001bddc1e9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/configserver/src/main/resources/config/gatewayserver.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gatewayserver/src/main/java/com/horakhty/gatewayserver/filters/FilterUtility.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gatewayserver/src/main/java/com/horakhty/gatewayserver/filters/RequestTraceFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gatewayserver/src/main/java/com/horakhty/gatewayserver/filters/ResponseTraceFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/account/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/account/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/src/main/java/com/hrkhty/account/AccountApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/account/src/main/java/com/hrkhty/account/AccountApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/src/main/java/com/hrkhty/account/mapper/CustomerMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/account/src/main/java/com/hrkhty/account/mapper/CustomerMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/src/main/java/com/hrkhty/account/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/account/src/main/java/com/hrkhty/account/controller/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/src/main/java/com/hrkhty/account/service/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/account/src/main/java/com/hrkhty/account/service/CustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/src/main/java/com/hrkhty/account/service/client/CardFeignClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/account/src/main/java/com/hrkhty/account/service/client/CardFeignClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/src/main/java/com/hrkhty/account/service/client/LoanFeignClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/account/src/main/java/com/hrkhty/account/service/client/LoanFeignClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/src/main/java/com/hrkhty/account/service/impl/CustomerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/account/src/main/java/com/hrkhty/account/service/impl/CustomerServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/account/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/account/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/card/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/card/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/card/src/main/java/com/hrkhty/card/controller/CardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/card/src/main/java/com/hrkhty/card/controller/CardController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/card/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/card/src/main/resources/application.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/configserver/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/configserver/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose/deafult/common-config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose/deafult/common-config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose/deafult/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose/deafult/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/eurekaserver/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/eurekaserver/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/loan/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/loan/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loan/src/main/java/com/hrkhty/loan/controller/LoanController.java" beforeDir="false" afterPath="$PROJECT_DIR$/loan/src/main/java/com/hrkhty/loan/controller/LoanController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/loan/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/loan/src/main/resources/application.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -37,7 +39,6 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -64,9 +65,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 5
+  &quot;associatedIndex&quot;: 6
 }</component>
-  <component name="ProjectId" id="2cznjP9CI7Ef6r9H2rifHt968Ir" />
+  <component name="ProjectId" id="2d5IEwJ0vpgy38B5JwLgeZ7cQ9L" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
@@ -86,6 +87,7 @@
     &quot;Spring Boot.CardApplication.executor&quot;: &quot;Run&quot;,
     &quot;Spring Boot.ConfigserverApplication.executor&quot;: &quot;Run&quot;,
     &quot;Spring Boot.EurekaserverApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.GatewayserverApplication.executor&quot;: &quot;Run&quot;,
     &quot;Spring Boot.LoanApplication.executor&quot;: &quot;Run&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
@@ -96,15 +98,9 @@
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RecentsManager">
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.hrkhty.account.dto" />
-    </key>
-  </component>
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
@@ -114,7 +110,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ConfigserverApplication">
+  <component name="RunManager" selected="Spring Boot.GatewayserverApplication">
     <configuration name="AccountApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="account" />
@@ -145,6 +141,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="GatewayserverApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="gatewayserver" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.horakhty.gatewayserver.GatewayserverApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="LoanApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="loan" />
@@ -155,56 +159,28 @@
     </configuration>
     <list>
       <item itemvalue="Spring Boot.AccountApplication" />
-      <item itemvalue="Spring Boot.EurekaserverApplication" />
       <item itemvalue="Spring Boot.CardApplication" />
       <item itemvalue="Spring Boot.ConfigserverApplication" />
+      <item itemvalue="Spring Boot.EurekaserverApplication" />
+      <item itemvalue="Spring Boot.GatewayserverApplication" />
       <item itemvalue="Spring Boot.LoanApplication" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="aed1cdf5-e1cb-4200-9cbb-fd516f284335" name="Changes" comment="" />
-      <created>1709123409396</created>
+      <changelist id="84703d0d-7084-45bb-b1dc-3f001bddc1e9" name="Changes" comment="" />
+      <created>1709291405560</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1709123409396</updated>
-      <workItem from="1709123410412" duration="168000" />
-      <workItem from="1709123587663" duration="2393000" />
-      <workItem from="1709206384479" duration="4736000" />
-      <workItem from="1709212873178" duration="317000" />
+      <updated>1709291405560</updated>
+      <workItem from="1709291406601" duration="1244000" />
+      <workItem from="1709338513810" duration="2414000" />
+      <workItem from="1709813453192" duration="2763000" />
     </task>
-    <task id="LOCAL-00001" summary="eureka server added not started">
-      <option name="closed" value="true" />
-      <created>1709124157704</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1709124157704</updated>
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="eureka server added not started" />
-    <option name="LAST_COMMIT_MESSAGE" value="eureka server added not started" />
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
   </component>
 </project>

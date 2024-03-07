@@ -113,7 +113,7 @@
 				<version>3.4.0</version>
 				<configuration>
 					<to>
-						<image>horakhty/${project.artifactId}:v1.3</image>
+						<image>horakhty/${project.artifactId}:v1.4</image>
 					</to>
 				</configuration>
 			</plugin>
